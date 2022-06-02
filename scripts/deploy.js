@@ -22,7 +22,7 @@ async function main(){
   console.log(`Current stored value in the contract is: ${currentStoredValue}`);
   // Updating the current stored value
   const changingStoredValue = await simpleStorage.store(7);
-  changingStoredValue.deployTransaction.wait(1);
+  await changingStoredValue.wait(1);
   const updatedValue = await simpleStorage.retrieve();
   console.log(`Updated value is: ${updatedValue}`);
 }
